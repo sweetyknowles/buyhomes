@@ -13,7 +13,7 @@ location: {
 },
 
 price: {
-    type: Number,
+    type: String,
     default: 'Home Price'
 },
 

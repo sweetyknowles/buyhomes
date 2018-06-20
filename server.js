@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 mongoose.Promise = global.Promise;
+
 mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/idea-board
 
 const connection = mongoose.connection;
@@ -21,7 +22,14 @@ connection.on('error', (err) => {
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client/build/'));
 
-app.get('/', (req,res) => {
+
+const buyerController = require('./controllers/buyerController')
+app.use('/api/buyer', buyerController)
+  
+const homeController = require('./controllers/homeController')
+app.use('/api/buyer/:buyerId/home', homeController)
+
+app.get('/*', (req,res) => {
   res.sendFile(`${__dirname}/client/build/index.html`)
 })
 

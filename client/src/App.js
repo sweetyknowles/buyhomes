@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import styled from './styled-components'
-import MainViewPage from './components/MainViewPage'
-import HomeViewPage from './components/HomeViewPage'
-import LoginViewPage from './components/LoginViewPage'
-
+import'./App.css'
+import MainView from './components/MainViewPage/MainView'
+import HomeView from './components/HomeViewPage/HomeView'
+import LoginView from './components/LoginViewPage/LoginView'
 
 
 class App extends Component {
@@ -16,9 +15,9 @@ class App extends Component {
             <Link to='/login'>Login</Link>
           </div>
           <Switch>
-            <Route exact path="/" component={MainViewPage}/>
-            <Route path="/login" component={LoginViewPage}/>
-            <Route path="/buyer/:buyerId" component={HomeViewPage}/>
+            <Route exact path="/" component={MainView}/>
+            <Route path="/login" component={LoginView}/>
+            <Route path="/buyer/:buyerId" component={HomeView}/>
           </Switch>
         </div>
       </Router>

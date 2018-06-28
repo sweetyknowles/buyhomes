@@ -5,7 +5,7 @@ import SignUp from './SignUp'
 
 class LoginView extends Component {
   state = {
-    buyers: [ { _id: '1234', name: 'jim' } ],
+    buyers: [ { _id: '1234', name: 'Scott' } ],
     redirectToBuyer: ''
   }
 
